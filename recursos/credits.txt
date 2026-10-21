@@ -1,0 +1,17 @@
+PAC3 - Realitat Virtual | Tutorial per a crear panoràmiques 360º d'imatge i de vídeo amb A-Frame
+Elisabet Delgado López
+Recursos utilitzats en la pràctica
+
+1. IMATGES (TEXTURES)
+
+Les imatges sol.jpg, vidre.jpg s'han obtingut de Magnific (abans Freepik): https://www.magnific.com
+Llicència: Free license de Magnific (ús permès amb atribució). Designed by Magnific
+
+2. IMATGES DE FONS PANORÀMIC 360º I VIDEO PANORÀMIC 360º
+
+Els models utilitzats són creacions pròpies, realitzades durant el curs de Grau d'Interacció i Multimèdia amb el programa Blender 4.0
+
+2. CODI DE REFERÈNCIA
+
+S'ha utilitzat la guia facilitada: https://gitlab.com/webXR/Tutorial_A-Frame_360/-/wikis/home i també la pàgina de https://aframe.io/docs/ o https://github.com/aframevr/aframe/
+

@@ -1,0 +1,38 @@
+<!-- La segona escena és un vídeo panoràmic de 360º que mostra una illa deserta. Aquesta escena és la continuació de l'escena inicial
+   1. El vídeo de fons de l'escena és de creació pròpia, i realitzada amb Blender. I l'hem renderitzat amb Cycles, i posant la càmera en panoràmica per aconseguir aquest efecte de 360º
+   2. En l'escena perquè sigui més atractiva hem afegit un objecte primitiu, imitant una ampolla. 
+   3. I hi ha un forat que retorna a l'escena principal
+   -->
+
+  <HTML>
+    <HEAD>
+        <meta charset="utf-8">
+        <meta name="description" content="Videosphere">
+        <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js">
+            document.querySelector('a-link').navigate('escena1.html');
+        </script>
+    </HEAD>
+    <BODY>
+        <!--Inici de l'escena-->
+        <a-scene >
+            <a-assets>
+            <!-- Cridem el vídeo que farem servir com a fons de la RV -->
+            <video id="cubsVideo" autoplay loop="true" src="Video.mp4"> </video>
+            <img id="Texture" src="vidre.jpg">
+            </a-assets>
+            <!-- Incorporació del vídeo com a panoràmic 360º -->
+             <a-videosphere src="#cubsVideo" color="#AAAAAA"></a-videosphere>           
+            <!---Incorporem un Objetcte basat en primitives. Aquest objecte simula una ampolla i realitzem una petita animació-->
+            <a-cylinder position="-1.33 2.56 -1.84" radius="0.2" height="0.8" color="#7FD8BE" opacity="0.7" scale="1 1 1" src="#Texture">
+                  <a-animation attribute="rotation" from="0 0 0" to="0 0 360" dur="4000" easing="linear" repeat="indefinite"></a-animation>
+                  <a-animation attribute="scale" begin="click" from="1 1 1" to="1.5 1.5 1.5" direction="alternate" dur="300" repeat="1"></a-animation>
+            </a-cylinder>
+            <!--Enllaç a una nova escena-->
+            <a-link href="escena1.html" title="Tornar" peekMode="false" position="-6.17 1.61 5.37" scale="1.15 1.15 1.15"></a-link>
+            <a-camera rotation="0 90 0">
+                <a-cursor color="#FF66FF"></a-cursor>
+            </a-camera>
+        </a-scene>
+    </BODY>
+</HTML>

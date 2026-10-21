@@ -1,0 +1,43 @@
+<!-- Hem creat una escena que simula una illa deserta:
+   1. La imatge de fons de l'escena és de creació pròpia, i realitzada amb Blender. I l'hem renderitzat amb Cycles, i posant la càmera en panoràmica per aconseguir aquest efecte de 360º
+   2. En l'escena perquè sigui més atractiva hem afegit unes esfera simulant el sol que va donant voltes, i un altre de fixe que hem incorpoat una interacció. Aprofitem elements que vam incorporar en la PAC1
+   3. I hi ha un forat on porta a l'altre escena on el fons és un vídeo panoràmic de 360º
+   -->
+
+  <HTML>
+    <HEAD>
+        <meta charset="utf-8">
+        <meta name="description" content="Sky">
+        <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js">
+            document.querySelector('a-link').navigate('escena2.html');
+        </script>
+    </HEAD>
+    <BODY>
+        <!--Inici de l'escena-->
+        <a-scene >
+            <a-assets>
+            <!-- Cridem les imatges que farem servir com a textures i fons de la RV -->
+            <img id="fons" src="illa.png">
+            <img id="Texture" src="sol.jpg">
+            </a-assets>
+            <!-- Incorporació del fons creat com a panoràmic 360º i afegim diferents paràmetres per millorar la visualització-->
+             <a-sky id="panoramica" radius="10" src="#fons" shader="flat" color="#AAAAAA"></a-sky>
+            <!--Incorporem un Objecte basat en primitives. Aquest objecte amb la textura simula un sol lluent-->
+            <a-sphere position="-9.30 3.55 -1.50" scale="0.8 0.8 0.8" radius="1.30"  side="double" opacity="0.640" src="#Texture">
+                <!--Interacció amb l'objecte-->
+                <a-animation attribute="rotation" begin="mouseenter" from="0 0 0" to="0 360 0" dur="6000" easing="linear" repeat="indefinite"></a-animation>
+            </a-sphere>
+            <!---Animació de la esfera petita-->
+            <a-entity position="-0.61 2.38 -4.04">
+                <a-animation attribute="rotation" from="0 0 0" to="0 360 0" dur="6000" easing="linear" repeat="indefinite"></a-animation>
+                <a-sphere position="-2.16 0.17 1.46" scale="0.2 0.2 0.2" radius="1.30" shader="standard" side="back" opacity="0.640" src="#Texture"></a-sphere>
+            </a-entity> 
+            <!--Enllaç a una nova escena-->
+            <a-link href="escena2.html" title="Entrar a la illa?" peekMode="false" position="-6.17 1.61 5.37" scale="1.15 1.15 1.15"></a-link>
+            <a-camera rotation="0 90 0">
+                <a-cursor color="#FF66FF"></a-cursor>
+            </a-camera>
+        </a-scene>
+    </BODY>
+</HTML>

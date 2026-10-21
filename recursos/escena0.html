@@ -1,0 +1,18 @@
+  <!--Aquesta escena és una escena estàtica, que l'hem creat per mostrar en el IFRAME-->  
+<HTML>
+  <HEAD>
+    <meta charset="utf-8">
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
+  </HEAD>
+  <BODY>
+    <a-scene>
+      <a-assets>
+        <img id="fons" src="fons-escena.jpg">
+        <img id="Texture" src="sol.jpg">
+      </a-assets>
+      <a-sky src="#fons" color="#AAAAAA"></a-sky>
+      <a-sphere position="3.43 3.45 -4.39" scale="0.8 0.8 0.8" radius="1.30" opacity="0.640" src="#Texture"></a-sphere>
+    </a-scene>
+  </BODY>
+</HTML>
