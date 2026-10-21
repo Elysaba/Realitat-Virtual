@@ -1,0 +1,74 @@
+<!-- PAC3 - Realitat Virtual | Tutorial per a crear panoràmiques 360º d'imatge i de vídeo amb A-Frame | Elisabet Delgado López
+Pàgina on incloem l'iframe que ens portarà a les diferents escenes creades
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A-Frame PAC3_Delgado_Elisabet</title>
+    <meta name="description" content="exercici sobre A-Frame">
+	<style>
+
+		body{
+			background-color: #4a7397;
+		}
+
+		#pagina{
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+ 
+		#VRarea{
+			position: relative;
+			padding: 50px;
+			width: 950px;
+			height: 500px;
+		}
+ 
+		#vr1{
+			display: block;
+			width: 100%;
+			height: 100%;
+			border: none;
+		}	
+
+		#go{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			cursor: pointer;
+		}
+		
+		#footer{
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			text-align: center;
+			padding: 10px;
+			font-family: sans-serif;
+			font-size: 20px;
+			font-weight: bold;
+		}
+	</style>
+
+  </head>
+  <body>
+	<div id="pagina">
+		<div id="VRarea">
+			<iframe id="vr1" src="recursos/escena0.html"></iframe>
+			<div id="go" onClick="javascript:document.location='recursos/escena1.html'"></div>
+		</div>
+		<div id="footer">
+			<p>Cliqueu les ulleres per entrar-hi</p>
+			<p style="font-size:13px; color:#ffffff"><a href="recursos/escena1.html" style="color:#ffffff; text-decoration:none">Escena 1 · Imatge 360º (a-sky)</a> | 
+			<a href="recursos/escena2.html" style="color:#ffffff; text-decoration:none">Escena 2 · Vídeo 360º (a-videosphere)</a>
+			</p>
+		</div>		
+	</div>
+	
+  </body>
+</html>
